@@ -15,35 +15,26 @@ with a modern TypeScript-first architecture.
 
 ## Frontend
 
-The web app includes pages for:
-- Landing
-- Task boards and task detail
-- Create a task
-- User profiles and user search
-- Client and freelancer dashboards
-- Messaging
-- Notifications
-- Settings
-- Billing
-- Admin panel
+The current web app surface is intentionally small:
+- `apps/web/src/app/page.tsx` provides the TaskFlow landing page.
+
+Additional product pages such as task boards, profiles, dashboards,
+messaging, notifications, billing, and admin tools are planned scope
+and should be tracked by focused issues before they are listed here as
+implemented routes.
 
 ## Backend
 
-The API includes:
-- Auth routes (register, login, OAuth callback, JWT refresh)
-- CRUD routes for users, tasks, and proposals
-- Payments routes (Stripe-focused service placeholder)
-- Reviews, messaging, notifications
-- File uploads and search
-- Admin routes
+The current Express API surface includes:
+- `GET /health` in `apps/api/src/index.ts`
+- `/users` mounted from `apps/api/src/routes/users.ts`
+- `GET /users`, which returns a placeholder empty user list
+- `POST /users`, which returns a placeholder created-user response
 
-Backend architecture follows:
-- Middleware layer (auth, rate limiting, error handling)
-- Controller layer
-- Service layer
-- Route layer
-- Validation schemas (Zod)
-- Utility helpers
+Auth, task/proposal CRUD, payments, reviews, messaging, notifications,
+uploads, search, admin routes, validation schemas, middleware, controllers,
+services, and utility layers are not fully implemented in this repository
+yet and should be added through focused issues and PRs.
 
 ## Getting Started
 
